@@ -10,6 +10,7 @@ export default function WeAre() {
   return (
     <div
       className="
+      bg-white
       mt-3
       px-6 py-2"
     >
@@ -47,7 +48,10 @@ export default function WeAre() {
         }}
       >
         {/* {t('Atour')} */}
-        At our
+       Commercial Advertising and Printing is a premier provider of 
+       comprehensive advertising and printing solutions. Our company specializes in a 
+       wide array of services designed to enhance
+        brand visibility and impact through innovative design and quality production.
       </h1>
       <div
                 className="max-w-md mx-auto mt-3 sm:flex sm:justify-center 
