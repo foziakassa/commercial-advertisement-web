@@ -24,7 +24,7 @@ const Card = ({ serviceData, onClick }: ServicesProps) => {
         justify-center gap-20 overflow-hidden 
        shadow-lg rounded-md
        hover:translate-x-1
-         hover:shadow-lg transition w-1000 h-14"
+         hover:shadow-lg transition w-80 h-14"
       // style={{ backgroundColor: 'white' }}
       onClick={onClick}
     >
