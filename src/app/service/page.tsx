@@ -34,6 +34,31 @@ const mockData: ServiceData[] = [
     description: "Custom banners for events and promotions.",
     coverPage: "path/to/banner-image.jpg", // Replace with actual image path
   },
+   {
+    name: "Billboards",
+    description: "Large-format outdoor advertising to capture attention.",
+    coverPage: "path/to/billboard-image.jpg", // Replace with actual image path
+  },
+  {
+    name: "Digital Advertising",
+    description: "Engaging digital solutions for online visibility.",
+    coverPage: "path/to/digital-ad-image.jpg", // Replace with actual image path
+  },
+  {
+    name: "Vehicle Branding",
+    description: "Transform vehicles into mobile advertisements.",
+    coverPage: "path/to/vehicle-branding-image.jpg", // Replace with actual image path
+  },
+  {
+    name: "Light Boxes",
+    description: "Illuminated displays for enhanced visibility.",
+    coverPage: "path/to/light-box-image.jpg", // Replace with actual image path
+  },
+  {
+    name: "Banners",
+    description: "Custom banners for events and promotions.",
+    coverPage: "path/to/banner-image.jpg", // Replace with actual image path
+  },
   // Add more services as needed
 ];
 
@@ -94,7 +119,7 @@ const Service = () => {
         <div className="flex-3 mt-20 pt-28 bg-white p-4 mb-20">
           {selectedService ? (
             <div>
-              <div className="relative flex w-[800px] h-full flex-col rounded-xl bg-white bg-clip-border text-gray-700 mx-40 hover:translate-x-1 shadow-md">
+              <div className="relative flex  h-full flex-col rounded-xl bg-white bg-clip-border text-gray-700 mx-40 hover:translate-x-1 shadow-md">
                 <div className="relative mx-auto -mt-12 h-64 w-96 overflow-hidden rounded-xl text-white shadow-xl bg-cover bg-center">
                   <img
                     className="object-fill h-48 w-full"
