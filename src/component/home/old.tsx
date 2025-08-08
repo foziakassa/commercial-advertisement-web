@@ -1,5 +1,5 @@
-"use client";
-import React, { useState } from 'react';
+'use client'
+import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay, Keyboard } from 'swiper/modules';
 import 'swiper/css';
@@ -7,9 +7,14 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
 
-const HomePage: React.FC = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
+import business from '../../../public/image/business.jpg';
+import calendar from '../../../public/image/calander.jpeg';
+import graphics from '../../../public/image/grapic design.jpeg';
+import printing from '../../../public/image/printing.jpg';
 
+interface HomeProps {}
+
+const HomePage: React.FC<HomeProps> = () => {
   const apiData = [
     {
       cover: "/image/business.jpg",
@@ -47,25 +52,19 @@ const HomePage: React.FC = () => {
 
   return (
     <div>
-      <header className="fixed top-0 left-0 w-full bg-opacity-70 bg-blue-800 text-white p-4 z-10">
-        <h1 className="text-2xl font-bold">{apiData[activeIndex].title}</h1>
-        <p>{apiData[activeIndex].description}</p>
-      </header>
-
       <Swiper
         modules={[Navigation, Pagination, Autoplay, Keyboard]} 
         spaceBetween={50}
         slidesPerView={1}
         speed={3000}
         autoplay={{
-          delay: 2000,
+          delay: 2000,  // Set autoplay delay to 2 seconds
           disableOnInteraction: false,
         }}
         loop={true}
         navigation
         pagination={{ clickable: true }}
-        keyboard={{ enabled: true }}
-        onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)} // Update active index on slide change
+        keyboard={{ enabled: true }}  // Enable keyboard navigation
       >
         {apiData.map((slide, index) => (
           <SwiperSlide key={index}>
@@ -73,11 +72,12 @@ const HomePage: React.FC = () => {
               className="top-0 left-0 w-full relative bg-cover bg-center h-[700px] overflowX-hidden"
               style={{
                 backgroundImage: `url('${slide.cover}')`,
+                // backgroundSize: 'contain',
                 width: '100vw',
                 overflowY: 'hidden',
               }}
             >
-              <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-blue-800"></div>
+              <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-blue"></div>
               <div className="relative h-full">
                 <section className="max-w-5xl pt-52 pb-24 mx-auto text-white body-font">
                   <div className="flex flex-col items-center justify-center h-full px-4">

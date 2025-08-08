@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Card from '@/component/sevice/page';
 
 interface ServiceData {
@@ -12,17 +12,17 @@ const mockData: ServiceData[] = [
   {
     name: "Billboards",
     description: "Large-format outdoor advertising to capture attention.",
-    coverPage: "path/to/billboard-image.jpg", // Replace with actual image path
+    coverPage: "/image/calander.jpeg", // Replace with actual image path
   },
   {
     name: "Digital Advertising",
     description: "Engaging digital solutions for online visibility.",
-    coverPage: "path/to/digital-ad-image.jpg", // Replace with actual image path
+    coverPage: "/image/car-branding.jpeg", // Replace with actual image path
   },
   {
     name: "Vehicle Branding",
     description: "Transform vehicles into mobile advertisements.",
-    coverPage: "path/to/vehicle-branding-image.jpg", // Replace with actual image path
+    coverPage: "/image/car-branding.jpeg", // Replace with actual image path
   },
   {
     name: "Light Boxes",
@@ -34,38 +34,12 @@ const mockData: ServiceData[] = [
     description: "Custom banners for events and promotions.",
     coverPage: "path/to/banner-image.jpg", // Replace with actual image path
   },
-   {
-    name: "Billboards",
-    description: "Large-format outdoor advertising to capture attention.",
-    coverPage: "path/to/billboard-image.jpg", // Replace with actual image path
-  },
-  {
-    name: "Digital Advertising",
-    description: "Engaging digital solutions for online visibility.",
-    coverPage: "path/to/digital-ad-image.jpg", // Replace with actual image path
-  },
-  {
-    name: "Vehicle Branding",
-    description: "Transform vehicles into mobile advertisements.",
-    coverPage: "path/to/vehicle-branding-image.jpg", // Replace with actual image path
-  },
-  {
-    name: "Light Boxes",
-    description: "Illuminated displays for enhanced visibility.",
-    coverPage: "path/to/light-box-image.jpg", // Replace with actual image path
-  },
-  {
-    name: "Banners",
-    description: "Custom banners for events and promotions.",
-    coverPage: "path/to/banner-image.jpg", // Replace with actual image path
-  },
-  // Add more services as needed
 ];
 
 const Service = () => {
-  const [perPage, setPerPage] = useState(5);
+  const [perPage] = useState(5);
   const [currentPage, setCurrentPage] = useState(1);
-  const [selectedService, setSelectedService] = useState<ServiceData | null>(null);
+  const [selectedService, setSelectedService] = useState<ServiceData | null>(mockData[0]); // Set the first service as selected
   const totalPage = Math.ceil(mockData.length / perPage);
 
   const handleServiceClick = (service: ServiceData) => {
@@ -79,7 +53,7 @@ const Service = () => {
       <div className="h-full flex px-2 mx-10 -my-14">
         <div
           id="service"
-          className="flex flex-col justify-center gap-40 pt-24 border my-20 rounded-md border-teal-50 shadow-lg bg-teal-50"
+          className="flex flex-col justify-center gap-40 pt-24 border my-20 rounded-md border-teal-50 shadow-lg bg-teal-50 max-w-6xl mx-auto"
           style={{ overflowX: "hidden", overflowY: "hidden" }}
         >
           <h1 className="text-5xl font-bold">
@@ -97,6 +71,7 @@ const Service = () => {
                     <Card
                       serviceData={item}
                       onClick={() => handleServiceClick(item)}
+                      isSelected={selectedService?.name === item.name} // Check if this item is selected
                     />
                   </div>
                 ))}

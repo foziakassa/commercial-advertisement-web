@@ -1,38 +1,30 @@
-
-// import { useTranslations } from 'next-intl';
 import React from 'react';
 
 interface ServiceData {
   name: string;
-  description:string;
-  
+  description: string;
 }
 
 interface ServicesProps {
   serviceData: ServiceData;
   onClick: () => void;
-  className?: string;
+  isSelected: boolean; // New prop to indicate if the card is selected
 }
 
-const Card = ({ serviceData, onClick }: ServicesProps) => {
-//   const t=useTranslations('product');
+const Card = ({ serviceData, onClick, isSelected }: ServicesProps) => {
   return (
     <div
-      className="flex flex-col 
-       hover:bg-teal-700
-        bg-white 
-        justify-center gap-20 overflow-hidden 
+      className={`flex flex-col 
+       ${isSelected ? 'bg-teal-700' : 'bg-white'} 
+       justify-center gap-20 overflow-hidden 
        shadow-lg rounded-md
-       hover:translate-x-1
-         hover:shadow-lg transition w-80 h-14"
-      // style={{ backgroundColor: 'white' }}
+       hover:bg-teal-700 transition w-80 h-14`}
       onClick={onClick}
     >
       <div className="p-2 space-y-2">
-        <h3 className="text-lg font-semibold text-gray-900
-        hover:text-white
-        ">{serviceData.name}</h3>
-        {/* <p className="text-sm text-gray-600">{serviceData.description.en}</p> */}
+        <h3 className={`text-lg font-semibold ${isSelected ? 'text-white' : 'text-gray-900'}`}>
+          {serviceData.name}
+        </h3>
       </div>
     </div>
   );
