@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 interface serviceProps {
   serviceData: {
     name:string
-    description:String;
+    description:string;
     coverPage: string;
   };
 }
