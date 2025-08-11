@@ -15,7 +15,13 @@ const AboutPage: React.FC = () => {
           <h2 className="my-4 font-bold text-3xl sm:text-4xl">
             About <span className="text-indigo-600">Our Company</span>
           </h2>
-          <p className="text-gray-700">
+          <p className="text-gray-700"
+           style={{
+          // animation: "float 2s infinite",
+          // letter-spacing:2px;
+          fontFamily: 'Open Sans',
+          lineHeight: 1.5,
+        }}>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, commodi
             doloremque, fugiat illum magni minus nisi nulla numquam obcaecati placeat quia, repellat tempore
             voluptatum.

@@ -39,7 +39,7 @@ export default function WeAre() {
       <h1
         className="mb-6 xl:mx-32 md:mx-15 my-7 
          text-gray-700 text-center xl:text-2xl md:text-1xl 
-         sm:text-lg xs:text-lg   bg-opacity-40 rounded-sm 
+         sm:text-lg xs:text-lg   bg-opacity-40 
          sm:mx-2 xs:mx-2"
         style={{
           // animation: "float 2s infinite",

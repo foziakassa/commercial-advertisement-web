@@ -15,14 +15,14 @@ const Card = ({ serviceData, onClick, isSelected }: ServicesProps) => {
   return (
     <div
       className={`flex flex-col 
-       ${isSelected ? 'bg-teal-700' : 'bg-white'} 
+       ${isSelected ? 'bg-blue-700' : 'bg-white'} 
        justify-center gap-20 overflow-hidden 
        shadow-lg rounded-md
-       hover:bg-teal-700 transition w-80 h-14`}
+       hover:bg-blue-700  transition w-80 h-14`}
       onClick={onClick}
     >
       <div className="p-2 space-y-2">
-        <h3 className={`text-lg font-semibold ${isSelected ? 'text-white' : 'text-gray-900'}`}>
+        <h3 className={`text-lg font-semibold hover:text-white ${isSelected ? 'text-white' : 'text-gray-900'}`}>
           {serviceData.name}
         </h3>
       </div>

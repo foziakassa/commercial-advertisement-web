@@ -12,10 +12,10 @@ export default function Home() {
     <div className="bg-white">
       <Navbar/>
       <HomePage/>
-      <WeAre/>
+      {/* <WeAre/> */}
 
       <AboutPage/>
-      <ServiceSample/>
+      {/* <ServiceSample/> */}
       <Service/>
       <ContactSection/>
       <Footers/>

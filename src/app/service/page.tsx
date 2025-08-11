@@ -10,13 +10,13 @@ interface ServiceData {
 
 const mockData: ServiceData[] = [
   {
-    name: "Billboards",
+    name: "Billboardlls",
     description: "Large-format outdoor advertising to capture attention.",
     coverPage: "/image/calander.jpeg", // Replace with actual image path
   },
   {
     name: "Digital Advertising",
-    description: "Engaging digital solutions for online visibility.",
+    description: "Engaging digital solutions for online visibility Engaging digital solutions for online visibilityEngaging digital solutions for online visibilityEngaging digital solutions for online visibility",
     coverPage: "/image/car-branding.jpeg", // Replace with actual image path
   },
   {
@@ -24,6 +24,22 @@ const mockData: ServiceData[] = [
     description: "Transform vehicles into mobile advertisements.",
     coverPage: "/image/car-branding.jpeg", // Replace with actual image path
   },
+    {
+    name: "Billboards",
+    description: "Large-format outdoor advertising to capture attention.",
+    coverPage: "/image/calander.jpeg", // Replace with actual image path
+  },
+  {
+    name: "Digital Advertising",
+    description: "Engaging digital solutions for online visibility Engaging digital solutions for online visibilityEngaging digital solutions for online visibilityEngaging digital solutions for online visibility",
+    coverPage: "/image/car-branding.jpeg", // Replace with actual image path
+  },
+  {
+    name: "Vehicle Branding",
+    description: "Transform vehicles into mobile advertisements.",
+    coverPage: "/image/car-branding.jpeg", // Replace with actual image path
+  },
+
   {
     name: "Light Boxes",
     description: "Illuminated displays for enhanced visibility.",
@@ -53,14 +69,14 @@ const Service = () => {
       <div className="h-full flex px-2 mx-10 -my-14">
         <div
           id="service"
-          className="flex flex-col justify-center gap-40 pt-24 border my-20 rounded-md border-teal-50 shadow-lg bg-teal-50 max-w-6xl mx-auto"
+          className="flex flex-col justify-center gap-40 pt-24 border my-20 rounded-md border-blue-50 shadow-lg bg-blue-50 max-w-6xl mx-auto"
           style={{ overflowX: "hidden", overflowY: "hidden" }}
         >
           <h1 className="text-5xl font-bold">
             <section>
               <div className="max-w-6xl mx-8 md:mx-20 lg:mx-10 xl:mx-auto pt-12">
                 <div className="md:mb-6 md:text-center">
-                  <h1 className="text-4xl -mt-20 font-bold text-teal-700 relative">
+                  <h1 className="text-4xl -mt-20 font-bold text-blue-700 relative">
                     Our Services
                   </h1>
                 </div>
@@ -76,11 +92,11 @@ const Service = () => {
                   </div>
                 ))}
               </div>
-              <div className="join my-7 ml-40">
+              <div className=" flex justify-center items-center">
                 {Array.from({ length: totalPage }).map((_, index) => (
                   <button
                     key={index}
-                    className={`join-item btn mx-2 ${currentPage === index + 1 ? "btn-active" : ""} text-black bg-teal-50 hover:bg-teal-800 hover:text-white p-3 rounded`}
+                    className={`join-item btn mx-0.5  m-2 ${currentPage === index + 1 ? "bg-white" : ""} text-black bg-blue-50 hover:bg-blue-800 hover:text-white p-3 rounded`}
                     onClick={() => setCurrentPage(index + 1)}
                   >
                     {index + 1}
@@ -91,10 +107,12 @@ const Service = () => {
           </h1>
         </div>
 
-        <div className="flex-3 mt-20 pt-28 bg-white p-4 mb-20">
+        <div className="flex-3 mt-20 pt-14 bg-white p-4 mb-20">
           {selectedService ? (
             <div>
-              <div className="relative flex  h-full flex-col rounded-xl bg-white bg-clip-border text-gray-700 mx-40 hover:translate-x-1 shadow-md">
+              <div className="relative flex  h-full flex-col rounded-xl
+               bg-white bg-clip-border text-gray-700 mx-20
+                hover:translate-x-1 ">
                 <div className="relative mx-auto -mt-12 h-64 w-96 overflow-hidden rounded-xl text-white shadow-xl bg-cover bg-center">
                   <img
                     className="object-fill h-48 w-full"
@@ -103,7 +121,7 @@ const Service = () => {
                   />
                 </div>
                 <div className="p-6">
-                  <h2 className="font-bold mb-2 text-teal-800 text-3xl">
+                  <h2 className="font-bold mb-2 text-blue-800 text-3xl">
                     {selectedService.name}
                   </h2>
                   <p className="block font-sans xl:text-lg lg:text-base md:text-sm sm:text-xs font-light leading-relaxed text-inherit antialiased">
