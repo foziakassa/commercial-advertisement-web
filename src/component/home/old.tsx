@@ -12,9 +12,9 @@ import calendar from '../../../public/image/calander.jpeg';
 import graphics from '../../../public/image/grapic design.jpeg';
 import printing from '../../../public/image/printing.jpg';
 
-interface HomeProps {}
+// interface HomeProps {}
 
-const HomePage: React.FC<HomeProps> = () => {
+export default function HomePage(){
   const apiData = [
     {
       cover: "/image/business.jpg",
@@ -122,4 +122,4 @@ const HomePage: React.FC<HomeProps> = () => {
   );
 };
 
-export default HomePage;
+// export default HomePage;
