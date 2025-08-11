@@ -8,6 +8,7 @@ export default function WeAre() {
 //   const t = useTranslations("WeAre")
   const router=useRouter()
   return (
+    
     <div
       className="
       bg-white

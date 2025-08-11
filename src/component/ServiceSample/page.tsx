@@ -17,13 +17,31 @@ export default function ServiceSample() {
         id: 2,
         name: "Graphic Design", // Changed from title to name
         description: "Designing visually appealing graphics.",
-        coverPage: "/image/grapicdesign", // Changed from imageUrl to coverPage
+        coverPage: "/image/Car-branding.jpeg", // Changed from imageUrl to coverPage
       },
       {
         id: 3,
         name: "Digital Marketing", // Changed from title to name
         description: "Promoting your brand online effectively.",
-        coverPage: "/image/wall-art", // Changed from imageUrl to coverPage
+        coverPage: "/image/printing.jpg", // Changed from imageUrl to coverPage
+      },
+      {
+        id: 1,
+        name: "Web Development", // Changed from title to name
+        description: "Creating responsive and modern websites.",
+        coverPage: "/image/business.jpg", // Changed from imageUrl to coverPage
+      },
+      {
+        id: 2,
+        name: "Graphic Design", // Changed from title to name
+        description: "Designing visually appealing graphics.",
+        coverPage: "/image/grapicdesign.jpeg", // Changed from imageUrl to coverPage
+      },
+      {
+        id: 3,
+        name: "Digital Marketing", // Changed from title to name
+        description: "Promoting your brand online effectively.",
+        coverPage: "/image/wall-art.jpeg", // Changed from imageUrl to coverPage
       },
     ],
   };
@@ -37,7 +55,7 @@ export default function ServiceSample() {
 
   return (
     <div className="overflow-x-hidden">
-      <div className="mt-70">
+      <div className="">
         <div className="flex justify-center items-center">
           <h1
             className="text-teal-700 text-center text-4xl 

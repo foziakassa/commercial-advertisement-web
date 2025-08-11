@@ -47,10 +47,10 @@ const HomePage: React.FC = () => {
 
   return (
     <div>
-      <header className="fixed top-0 left-0 w-full bg-opacity-70 bg-blue-800 text-white p-4 z-10">
+      {/* <header className="fixed top-0 left-0 w-full bg-opacity-70 bg-blue-800 text-white p-4 z-10">
         <h1 className="text-2xl font-bold">{apiData[activeIndex].title}</h1>
         <p>{apiData[activeIndex].description}</p>
-      </header>
+      </header> */}
 
       <Swiper
         modules={[Navigation, Pagination, Autoplay, Keyboard]} 
@@ -70,7 +70,7 @@ const HomePage: React.FC = () => {
         {apiData.map((slide, index) => (
           <SwiperSlide key={index}>
             <div
-              className="top-0 left-0 w-full relative bg-cover bg-center h-[700px] overflowX-hidden"
+              className="top-0 left-0 w-full relative bg-cover bg-center h-[500px] overflowX-hidden"
               style={{
                 backgroundImage: `url('${slide.cover}')`,
                 width: '100vw',
