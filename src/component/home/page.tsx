@@ -70,7 +70,7 @@ const HomePage: React.FC = () => {
         {apiData.map((slide, index) => (
           <SwiperSlide key={index}>
             <div
-              className="top-0 left-0 w-full relative bg-cover bg-center h-[500px] overflowX-hidden"
+              className="top-0 left-0 w-full relative bg-cover bg-center h-[400px] overflowX-hidden"
               style={{
                 backgroundImage: `url('${slide.cover}')`,
                 width: '100vw',
@@ -79,10 +79,10 @@ const HomePage: React.FC = () => {
             >
               <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-blue-800"></div>
               <div className="relative h-full">
-                <section className="max-w-5xl pt-52 pb-24 mx-auto text-white body-font">
+                <section className="max-w-5xl pt-52 pb-24 mx-auto text-white body-font -mt-20">
                   <div className="flex flex-col items-center justify-center h-full px-4">
                     <h1
-                      className="text-3xl md:text-5xl text-white font-bold text-center mb-6 animate__animated"
+                      className="text-3xl md:text-5xl text-white font-bold text-center justify-center mb-6 animate__animated"
                       style={{
                         textShadow: '0px 2px 4px rgba(0, 0, 0, 0.2)',
                         animation: 'float 2s infinite',
@@ -108,7 +108,7 @@ const HomePage: React.FC = () => {
                         }}
                         onClick={handleGetStartedClick}
                       >
-                        Get Started
+                        contact us 
                       </button>
                     </div>
                   </div>
