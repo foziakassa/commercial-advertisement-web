@@ -1,6 +1,11 @@
 "use client";
+// export const metadata:Metadata={
+//   title:"service"
+// }
 import React, { useState } from "react";
 import Card from '@/component/sevice/page';
+import { Metadata } from "next";
+import { title } from "process";
 
 interface ServiceData {
   name: string;
