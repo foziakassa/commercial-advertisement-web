@@ -62,9 +62,9 @@ const HomePage: React.FC = () => {
           disableOnInteraction: false,
         }}
         loop={true}
+        keyboard={{ enabled: true }}
         navigation
         pagination={{ clickable: true }}
-        keyboard={{ enabled: true }}
         onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)} // Update active index on slide change
       >
         {apiData.map((slide, index) => (

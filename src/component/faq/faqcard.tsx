@@ -1,7 +1,7 @@
 interface FaqProps {
   FaqData: {
     question: string
-    answer:String
+    answer:string
   };
 }
 // import { useTranslations } from "next-intl";
