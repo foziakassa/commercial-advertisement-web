@@ -15,7 +15,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Commercial and Advertisement - Professional Marketing Services Ethiopia",
+  title: {
+   default: "Moxc Commercial and Advertisement - Professional Marketing Services Ethiopia for business addvertismenr , printing ",
+template: "printing , advertising "
+  },
   description: "Leading commercial and advertisement company in Ethiopia offering professional marketing, branding, printing, and design services for businesses.",
   keywords: ["commercial advertisement", "marketing services Ethiopia", "branding", "printing services", "graphic design", "business marketing", "Ethiopia advertising"],
   authors: [{ name: "Commercial and Advertisement" }],
