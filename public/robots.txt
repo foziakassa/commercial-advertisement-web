@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Allow crawling of all content
+Disallow: /api/
+Disallow: /admin/
+Disallow: /private/
+
+# Sitemap location
+Sitemap: https://yourwebsite.com/sitemap.xml
+
+# Crawl delay for bots
+Crawl-delay: 1
