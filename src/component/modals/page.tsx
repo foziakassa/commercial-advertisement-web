@@ -3,7 +3,7 @@ import Link from "next/link";
 import { FaQuestion } from "react-icons/fa";
 import FAQ from "../faq/page";
 
-export default function Modals({ visibless, showModals , handleOks , handleCancels}: any) {
+export default function Modals({ visibless, showModals , handleOks , handleCancels}:any) {
   return (
     <div
       style={{

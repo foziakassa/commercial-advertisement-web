@@ -2,7 +2,7 @@
 // import "./Card.css";
 import TestinomialCard from "./TestinomialCard";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+import { Navigation, Pagination, Scrollbar, A11y, Autoplay, Keyboard } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/autoplay';
 import 'swiper/css/navigation';
@@ -50,11 +50,33 @@ export default function Testinomial() {
         {/* {t("client")} */}
         client
       </h1>
+      {/* <Swiper
+        modules={[Navigation, Pagination, Autoplay, Keyboard]} 
+        spaceBetween={50}
+        slidesPerView={1}
+        speed={3000}
+        autoplay={{
+          delay: 2000,
+          disableOnInteraction: false,
+        }}
+        loop={true}
+        keyboard={{ enabled: true }}
+        navigation
+        pagination={{ clickable: true }}
+        onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)} // Update active index on slide change
+      ></Swiper> */}
 
       <Swiper
-        modules={[Navigation, Pagination, Scrollbar, A11y]}
+        modules={[Navigation, Pagination,  Autoplay, Keyboard]}
         spaceBetween={50}
         slidesPerView={3}
+         speed={3000}
+        autoplay={{
+          delay: 2000,
+          disableOnInteraction: false,
+        }}
+        loop={true}
+        keyboard={{ enabled: true }}
         navigation
         pagination={{ clickable: true }}
         className="justify-center"
