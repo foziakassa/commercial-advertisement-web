@@ -1,9 +1,17 @@
-import { Modal, Button } from "antd";
+import { Modal } from "antd";
 import Link from "next/link";
 import { FaQuestion } from "react-icons/fa";
 import FAQ from "../faq/page";
 
-export default function Modals({ visibless, showModals , handleOks , handleCancels}:any) {
+// Define the props interface
+interface ModalsProps {
+  visibless: boolean;
+  showModals: () => void;
+  handleOks: () => void; // Define the type of handleOks if used
+  handleCancels: () => void;
+}
+
+export default function Modals({ visibless, showModals, handleOks, handleCancels }: ModalsProps) {
   return (
     <div
       style={{
@@ -19,12 +27,10 @@ export default function Modals({ visibless, showModals , handleOks , handleCance
         </Link>
       </button>
       <Modal 
-       open={visibless}
-       onCancel={handleCancels}
-      //  title='Feedback'
-       // onOk={handleOk}
-       closable={true}
-       footer={null}
+        open={visibless}
+        onCancel={handleCancels}
+        closable={true}
+        footer={null}
       >
         <FAQ />
       </Modal>
