@@ -36,6 +36,17 @@ const mockData: ServiceData[] = [
     description: "Custom banners for events and promotions.",
     coverPage: "/placeholder.svg?height=300&width=400",
   },
+  {
+    name: "Billboards",
+    description: "Large-format outdoor advertising to capture attention.",
+    coverPage: "/image/calander.jpeg",
+  },
+  {
+    name: "Digital Advertising",
+    description:
+      "Engaging digital solutions for online visibility. Our comprehensive digital advertising services help businesses reach their target audience through strategic online campaigns.",
+    coverPage: "/image/car-branding.jpeg",
+  }
 ]
 
 const Service = () => {
