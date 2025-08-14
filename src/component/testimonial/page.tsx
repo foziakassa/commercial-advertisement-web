@@ -46,9 +46,9 @@ export default function Testinomial() {
 
   return (
     <div className="">
-      <h1 className="text-teal-700 text-center text-4xl font-bold p-2 bg-opacity-40 rounded-sm">
+      <h1 className="text-blue-700 text-center text-4xl font-bold p-2 bg-opacity-40 rounded-sm">
         {/* {t("client")} */}
-        client
+        Client sayings
       </h1>
       {/* <Swiper
         modules={[Navigation, Pagination, Autoplay, Keyboard]} 
