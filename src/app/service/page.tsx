@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Card from "@/component/sevice/page"
 
 interface ServiceData {
@@ -36,23 +36,32 @@ const mockData: ServiceData[] = [
     description: "Custom banners for events and promotions.",
     coverPage: "/placeholder.svg?height=300&width=400",
   },
-  {
-    name: "Billboards",
-    description: "Large-format outdoor advertising to capture attention.",
-    coverPage: "/image/calander.jpeg",
-  },
-  {
-    name: "Digital Advertising",
-    description:
-      "Engaging digital solutions for online visibility. Our comprehensive digital advertising services help businesses reach their target audience through strategic online campaigns.",
-    coverPage: "/image/car-branding.jpeg",
-  }
 ]
 
 const Service = () => {
-  const [perPage] = useState(5)
+  const [perPage, setPerPage] = useState(5)
   const [currentPage, setCurrentPage] = useState(1)
   const [selectedService, setSelectedService] = useState<ServiceData | null>(mockData[0])
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        // Mobile breakpoint
+        setPerPage(3)
+      } else {
+        setPerPage(5)
+      }
+      // Reset to first page when changing items per page
+      setCurrentPage(1)
+    }
+
+    // Set initial value
+    handleResize()
+
+    window.addEventListener("resize", handleResize)
+    return () => window.removeEventListener("resize", handleResize)
+  }, [])
+
   const totalPage = Math.ceil(mockData.length / perPage)
 
   const handleServiceClick = (service: ServiceData) => {
