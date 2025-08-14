@@ -1,151 +1,129 @@
-"use client";
-// export const metadata:Metadata={
-//   title:"service"
-// }
-import React, { useState } from "react";
-import Card from '@/component/sevice/page';
-import { Metadata } from "next";
-import { title } from "process";
+"use client"
+
+import { useState } from "react"
+import Card from "@/component/sevice/page"
 
 interface ServiceData {
-  name: string;
-  description: string;
-  coverPage: string;
+  name: string
+  description: string
+  coverPage: string
 }
 
 const mockData: ServiceData[] = [
   {
-    name: "Billboardlls",
-    description: "Large-format outdoor advertising to capture attention.",
-    coverPage: "/image/calander.jpeg", // Replace with actual image path
-  },
-  {
-    name: "Digital Advertising",
-    description: "Engaging digital solutions for online visibility Engaging digital solutions for online visibilityEngaging digital solutions for online visibilityEngaging digital solutions for online visibility",
-    coverPage: "/image/car-branding.jpeg", // Replace with actual image path
-  },
-  {
-    name: "Vehicle Branding",
-    description: "Transform vehicles into mobile advertisements.",
-    coverPage: "/image/car-branding.jpeg", // Replace with actual image path
-  },
-    {
     name: "Billboards",
     description: "Large-format outdoor advertising to capture attention.",
-    coverPage: "/image/calander.jpeg", // Replace with actual image path
+    coverPage: "/image/calander.jpeg",
   },
   {
     name: "Digital Advertising",
-    description: "Engaging digital solutions for online visibility Engaging digital solutions for online visibilityEngaging digital solutions for online visibilityEngaging digital solutions for online visibility",
-    coverPage: "/image/car-branding.jpeg", // Replace with actual image path
+    description:
+      "Engaging digital solutions for online visibility. Our comprehensive digital advertising services help businesses reach their target audience through strategic online campaigns.",
+    coverPage: "/image/car-branding.jpeg",
   },
   {
     name: "Vehicle Branding",
     description: "Transform vehicles into mobile advertisements.",
-    coverPage: "/image/car-branding.jpeg", // Replace with actual image path
+    coverPage: "/image/car-branding.jpeg",
   },
-
   {
     name: "Light Boxes",
     description: "Illuminated displays for enhanced visibility.",
-    coverPage: "path/to/light-box-image.jpg", // Replace with actual image path
+    coverPage: "/placeholder.svg?height=300&width=400",
   },
   {
     name: "Banners",
     description: "Custom banners for events and promotions.",
-    coverPage: "path/to/banner-image.jpg", // Replace with actual image path
+    coverPage: "/placeholder.svg?height=300&width=400",
   },
-];
+]
 
 const Service = () => {
-  const [perPage] = useState(5);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [selectedService, setSelectedService] = useState<ServiceData | null>(mockData[0]); // Set the first service as selected
-  const totalPage = Math.ceil(mockData.length / perPage);
+  const [perPage] = useState(5)
+  const [currentPage, setCurrentPage] = useState(1)
+  const [selectedService, setSelectedService] = useState<ServiceData | null>(mockData[0])
+  const totalPage = Math.ceil(mockData.length / perPage)
 
   const handleServiceClick = (service: ServiceData) => {
-    setSelectedService(service);
-  };
+    setSelectedService(service)
+  }
 
-  const paginatedServices = mockData.slice((currentPage - 1) * perPage, currentPage * perPage);
+  const paginatedServices = mockData.slice((currentPage - 1) * perPage, currentPage * perPage)
 
   return (
-    <div>
-      <div className="h-full flex px-2 mx-10 -my-14">
-        <div
-          id="service"
-          className="flex flex-col justify-center gap-40 pt-24 border my-20 rounded-md border-blue-50 shadow-lg bg-blue-50 max-w-6xl mx-auto"
-          style={{ overflowX: "hidden", overflowY: "hidden" }}
-        >
-          <h1 className="text-5xl font-bold">
-            <section>
-              <div className="max-w-6xl mx-8 md:mx-20 lg:mx-10 xl:mx-auto pt-12">
-                <div className="md:mb-6 md:text-center">
-                  <h1 className="text-4xl -mt-20 font-bold text-blue-700 relative">
-                    Our Services
-                  </h1>
-                </div>
+    <div className="min-h-screen bg-gray-50">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
+          {/* Services List Section */}
+          <div className="w-full lg:w-1/2">
+            <div className="bg-blue-50 rounded-lg shadow-lg p-4 sm:p-6 lg:p-8">
+              <div className="text-center mb-6">
+                <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-blue-700">Our Services</h1>
               </div>
-              <div className="flex flex-col justify-center gap-5 px-16">
+
+              <div className="space-y-4">
                 {paginatedServices.map((item: ServiceData, index: number) => (
-                  <div className="flex-0 w-full justify-center" key={index}>
+                  <div key={index} className="w-full">
                     <Card
                       serviceData={item}
                       onClick={() => handleServiceClick(item)}
-                      isSelected={selectedService?.name === item.name} // Check if this item is selected
+                      isSelected={selectedService?.name === item.name}
                     />
                   </div>
                 ))}
               </div>
-              <div className=" flex justify-center items-center">
+
+              <div className="flex justify-center items-center mt-6 flex-wrap gap-2">
                 {Array.from({ length: totalPage }).map((_, index) => (
                   <button
                     key={index}
-                    className={`join-item btn mx-0.5  m-2 ${currentPage === index + 1 ? "bg-white" : ""} text-black bg-blue-50 hover:bg-blue-800 hover:text-white p-3 rounded`}
+                    className={`px-3 py-2 rounded transition-colors ${
+                      currentPage === index + 1 ? "bg-blue-700 text-white" : "bg-white text-blue-700 hover:bg-blue-100"
+                    }`}
                     onClick={() => setCurrentPage(index + 1)}
                   >
                     {index + 1}
                   </button>
                 ))}
               </div>
-            </section>
-          </h1>
-        </div>
+            </div>
+          </div>
 
-        <div className="flex-3 mt-20 pt-14 bg-white p-4 mb-20">
-          {selectedService ? (
-            <div>
-              <div className="relative flex  h-full flex-col rounded-xl
-               bg-white bg-clip-border text-gray-700 mx-20
-                hover:translate-x-1 ">
-                <div className="relative mx-auto -mt-12 h-64 w-96 overflow-hidden rounded-xl text-white shadow-xl bg-cover bg-center">
-                  <img
-                    className="object-fill h-48 w-full"
-                    src={selectedService.coverPage}
-                    alt={selectedService.name}
-                  />
+          {/* Service Details Section */}
+          <div className="w-full lg:w-1/2">
+            <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 lg:p-8 min-h-[400px] lg:min-h-[600px]">
+              {selectedService ? (
+                <div className="h-full">
+                  <div className="relative mb-6">
+                    <div className="aspect-video w-full overflow-hidden rounded-lg shadow-md">
+                      <img
+                        className="w-full h-full object-cover"
+                        src={selectedService.coverPage || "/placeholder.svg"}
+                        alt={selectedService.name}
+                      />
+                    </div>
+                  </div>
+
+                  <div className="space-y-4">
+                    <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-blue-800">{selectedService.name}</h2>
+                    <p className="text-sm sm:text-base lg:text-lg text-gray-700 leading-relaxed">
+                      {selectedService.description}
+                    </p>
+                  </div>
                 </div>
-                <div className="p-6">
-                  <h2 className="font-bold mb-2 text-blue-800 text-3xl">
-                    {selectedService.name}
-                  </h2>
-                  <p className="block font-sans xl:text-lg lg:text-base md:text-sm sm:text-xs font-light leading-relaxed text-inherit antialiased">
-                    {selectedService.description}
+              ) : (
+                <div className="flex items-center justify-center h-full">
+                  <p className="text-blue-900 font-bold text-lg sm:text-xl text-center">
+                    Please select from the services to see the description
                   </p>
                 </div>
-              </div>
+              )}
             </div>
-          ) : (
-            <div>
-              <p className="text-blue-900 justify-center font-bold text-xl text-center mt-16">
-                Please select from the services to see the description
-              </p>
-            </div>
-          )}
+          </div>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Service;
+export default Service
