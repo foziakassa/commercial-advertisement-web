@@ -140,40 +140,15 @@ export default function Navbar() {
               </Link>
 
               {/* Mobile Services Submenu */}
-              <div className="px-3 py-2">
-                <span className="text-gray-700 text-base font-medium">Services</span>
-                <div className="ml-4 mt-2 space-y-1">
-                  <Link
-                    href="/services/web-design"
-                    className="text-gray-600 hover:text-blue-600 block py-1 text-sm transition-colors"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    Web Design
-                  </Link>
-                  <Link
-                    href="/services/development"
-                    className="text-gray-600 hover:text-blue-600 block py-1 text-sm transition-colors"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    Development
-                  </Link>
-                  <Link
-                    href="/services/consulting"
-                    className="text-gray-600 hover:text-blue-600 block py-1 text-sm transition-colors"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    Consulting
-                  </Link>
-                </div>
-              </div>
-
-              <Link
-                href="/portfolio"
+             <Link
+                href="/service"
                 className="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium transition-colors"
                 onClick={() => setIsOpen(false)}
               >
-                Portfolio
+                service
               </Link>
+
+              
               <Link
                 href="/contact"
                 className="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium transition-colors"
@@ -183,15 +158,7 @@ export default function Navbar() {
               </Link>
 
               {/* Mobile CTA Button */}
-              <div className="px-3 py-2">
-                <Link
-                  href="/get-started"
-                  className="bg-blue-600 text-white block text-center px-4 py-2 rounded-md text-base font-medium hover:bg-blue-700 transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Get Started
-                </Link>
-              </div>
+             
             </div>
           </div>
         )}
