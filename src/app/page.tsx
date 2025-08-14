@@ -11,6 +11,7 @@ import Navbar from "@/component/nav/page";
 import ContactSection from "@/component/contact/page";
 import Testinomial from "@/component/testimonial/page";
 import Modals from "@/component/modals/page";
+import Contact from "./contact/page";
 export default function Home() {
   const [visibles, setVisibles] = useState(false);
   function showModalss() {
@@ -24,7 +25,7 @@ export default function Home() {
   }
   return (
     <div className="bg-white">
-      <Navbar/>
+      {/* <Navbar/> */}
       <HomePage/>
       {/* <WeAre/> */}
 
@@ -33,14 +34,15 @@ export default function Home() {
       <Service/>
       <Testinomial/>
 
-      <ContactSection/>
+      {/* <ContactSection/> */}
+      <Contact/>
       <Modals
           visibless={visibles}
           showModals={showModalss}
           handleCancels={handleCancelss}
           handleOks={handleOkss}
         />
-      <Footers/>
+      {/* <Footers/> */}
 
       
     </div>

@@ -56,7 +56,7 @@ export default function Navbar() {
                 About
               </Link>
                <Link
-                href="/service"
+                href="#service"
                 className="text-gray-700 hover:text-blue-600 px-3 py-2 text-xl font-medium transition-colors"
               >
                 service
@@ -98,7 +98,7 @@ export default function Navbar() {
 
               
               <Link
-                href="/contact"
+                href="#contact"
                 className="text-gray-700 hover:text-blue-600 px-3 py-2 text-xl font-medium transition-colors"
               >
                 Contact

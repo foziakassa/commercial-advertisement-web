@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { DefaultSeo } from 'next-seo';
 import SEO from '../../next-seo.config.js';
+import Navbar from "@/component/nav/page";
+import Footer from "@/component/footer/page";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -106,7 +108,9 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {/* <Image /> */}
+        <Navbar/>
         {children}
+        <Footer/>
       </body>
     </html>
   );
