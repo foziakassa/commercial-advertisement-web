@@ -26,7 +26,10 @@ const ContactSection: React.FC = () => {
                 <div className="relative mb-6">
                   <input
                     type="text"
-                    className="peer block min-h-[auto] w-full rounded border-2 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary motion-reduce:transition-none"
+                    className="peer block min-h-[auto] w-full rounded border-2 bg-transparent py-[0.32rem] px-3 
+                    leading-[1.6] outline-none transition-all 
+                    duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary 
+                    motion-reduce:transition-none"
                     id="exampleInput90"
                     placeholder=" "
                   />

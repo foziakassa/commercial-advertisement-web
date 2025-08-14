@@ -47,7 +47,7 @@ const Service = () => {
     const handleResize = () => {
       if (window.innerWidth < 768) {
         // Mobile breakpoint
-        setPerPage(3)
+        setPerPage(4)
       } else {
         setPerPage(5)
       }
@@ -111,7 +111,7 @@ const Service = () => {
 
           {/* Service Details Section */}
           <div className="w-full lg:w-1/2">
-            <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 lg:p-8 min-h-[400px] lg:min-h-[600px]">
+            <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 lg:p-8 min-h-[400px] lg:min-h-[557px]">
               {selectedService ? (
                 <div className="h-full">
                   <div className="relative mb-6">
