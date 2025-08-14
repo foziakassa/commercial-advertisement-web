@@ -33,7 +33,7 @@ export default function Navbar() {
     />
   </Link>
   <p
-    className="text-xl font-bold text-blue-900 flex items-center px-2 md:text-2xl"
+    className="text-xl font-bold text-blue-900 flex items-center px-2 md:text-2xl lg:text-lg sm:text-sm"
   >
     Commercial Advertisement
   </p>
