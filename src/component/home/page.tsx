@@ -54,7 +54,7 @@ const HomePage: React.FC = () => {
 
       <Swiper
         modules={[Navigation, Pagination, Autoplay, Keyboard]} 
-        spaceBetween={50}
+        spaceBetween={20}
         slidesPerView={1}
         speed={3000}
         autoplay={{
