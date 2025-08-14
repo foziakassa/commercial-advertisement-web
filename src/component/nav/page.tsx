@@ -1,149 +1,115 @@
 "use client"
 
-import { useState, useEffect } from "react"
-import Card from "@/components/service-card"
+import { useState } from "react"
+import Link from "next/link"
+import Image from "next/image"
+import { Menu, X } from "lucide-react"
 
-interface ServiceData {
-  name: string
-  description: string
-  coverPage: string
-}
+export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false)
 
-const mockData: ServiceData[] = [
-  {
-    name: "Billboards",
-    description: "Large-format outdoor advertising to capture attention.",
-    coverPage: "/image/calander.jpeg",
-  },
-  {
-    name: "Digital Advertising",
-    description:
-      "Engaging digital solutions for online visibility. Our comprehensive digital advertising services help businesses reach their target audience through strategic online campaigns.",
-    coverPage: "/image/car-branding.jpeg",
-  },
-  {
-    name: "Vehicle Branding",
-    description: "Transform vehicles into mobile advertisements.",
-    coverPage: "/image/car-branding.jpeg",
-  },
-  {
-    name: "Light Boxes",
-    description: "Illuminated displays for enhanced visibility.",
-    coverPage: "/placeholder.svg?height=300&width=400",
-  },
-  {
-    name: "Banners",
-    description: "Custom banners for events and promotions.",
-    coverPage: "/placeholder.svg?height=300&width=400",
-  },
-]
-
-const Service = () => {
-  const [perPage, setPerPage] = useState(5)
-  const [currentPage, setCurrentPage] = useState(1)
-  const [selectedService, setSelectedService] = useState<ServiceData | null>(mockData[0])
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 768) {
-        // Mobile breakpoint
-        setPerPage(3)
-      } else {
-        setPerPage(5)
-      }
-      // Reset to first page when changing items per page
-      setCurrentPage(1)
-    }
-
-    // Set initial value
-    handleResize()
-
-    window.addEventListener("resize", handleResize)
-    return () => window.removeEventListener("resize", handleResize)
-  }, [])
-
-  const totalPage = Math.ceil(mockData.length / perPage)
-
-  const handleServiceClick = (service: ServiceData) => {
-    setSelectedService(service)
+  const toggleMenu = () => {
+    setIsOpen(!isOpen)
   }
 
-  const paginatedServices = mockData.slice((currentPage - 1) * perPage, currentPage * perPage)
-
   return (
-    <div className="min-h-screen bg-gray-50">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
-          {/* Services List Section */}
-          <div className="w-full lg:w-1/2">
-            <div className="bg-blue-50 rounded-lg shadow-lg p-4 sm:p-6 lg:p-8">
-              <div className="text-center mb-6">
-                <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-blue-700">Our Services</h1>
+    <nav className="bg-white shadow-lg sticky top-0 z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16 sm:h-20">
+          {/* Logo Section */}
+          <div className="flex items-center lg:-ml-5 sm:-ml-0 flex-shrink-0 min-w-0">
+            <Link href="/" className="flex items-center space-x-2 sm:space-x-3">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 flex-shrink-0">
+                <Image
+                  src="/image/logo2.png"
+                  alt="Logo"
+                  width={48}
+                  height={48}
+                  className="w-full h-full object-contain"
+                />
               </div>
-
-              <div className="space-y-4">
-                {paginatedServices.map((item: ServiceData, index: number) => (
-                  <div key={index} className="w-full">
-                    <Card
-                      serviceData={item}
-                      onClick={() => handleServiceClick(item)}
-                      isSelected={selectedService?.name === item.name}
-                    />
-                  </div>
-                ))}
-              </div>
-
-              <div className="flex justify-center items-center mt-6 flex-wrap gap-2">
-                {Array.from({ length: totalPage }).map((_, index) => (
-                  <button
-                    key={index}
-                    className={`px-3 py-2 rounded transition-colors ${
-                      currentPage === index + 1 ? "bg-blue-700 text-white" : "bg-white text-blue-700 hover:bg-blue-100"
-                    }`}
-                    onClick={() => setCurrentPage(index + 1)}
-                  >
-                    {index + 1}
-                  </button>
-                ))}
-              </div>
-            </div>
+              <span className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-blue-900 truncate">
+                Commercial Advertisement
+              </span>
+            </Link>
           </div>
 
-          {/* Service Details Section */}
-          <div className="w-full lg:w-1/2">
-            <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 lg:p-8 min-h-[400px] lg:min-h-[600px]">
-              {selectedService ? (
-                <div className="h-full">
-                  <div className="relative mb-6">
-                    <div className="aspect-video w-full overflow-hidden rounded-lg shadow-md">
-                      <img
-                        className="w-full h-full object-cover"
-                        src={selectedService.coverPage || "/placeholder.svg"}
-                        alt={selectedService.name}
-                      />
-                    </div>
-                  </div>
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-4 lg:space-x-8">
+            <Link
+              href="/"
+              className="text-gray-700 hover:text-blue-600 px-3 py-2 text-lg font-medium transition-colors whitespace-nowrap"
+            >
+              Home
+            </Link>
+            <Link
+              href="/about"
+              className="text-gray-700 hover:text-blue-600 px-3 py-2 text-lg font-medium transition-colors whitespace-nowrap"
+            >
+              About
+            </Link>
+            <Link
+              href="/service"
+              className="text-gray-700 hover:text-blue-600 px-3 py-2 text-lg font-medium transition-colors whitespace-nowrap"
+            >
+              Service
+            </Link>
+            <Link
+              href="/contact"
+              className="text-gray-700 hover:text-blue-600 px-3 py-2 text-lg font-medium transition-colors whitespace-nowrap"
+            >
+              Contact
+            </Link>
+          </div>
 
-                  <div className="space-y-4">
-                    <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-blue-800">{selectedService.name}</h2>
-                    <p className="text-sm sm:text-base lg:text-lg text-gray-700 leading-relaxed">
-                      {selectedService.description}
-                    </p>
-                  </div>
-                </div>
-              ) : (
-                <div className="flex items-center justify-center h-full">
-                  <p className="text-blue-900 font-bold text-lg sm:text-xl text-center">
-                    Please select from the services to see the description
-                  </p>
-                </div>
-              )}
-            </div>
+          {/* Mobile menu button */}
+          <div className="md:hidden flex-shrink-0">
+            <button
+              onClick={toggleMenu}
+              className="text-gray-700 hover:text-blue-600 focus:outline-none focus:text-blue-600 p-2"
+              aria-label="Toggle menu"
+            >
+              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
           </div>
         </div>
+
+        {/* Mobile Navigation */}
+        {isOpen && (
+          <div className="md:hidden border-t border-gray-200">
+            <div className="px-2 pt-2 pb-3 space-y-1 bg-gray-50">
+              <Link
+                href="/"
+                className="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                Home
+              </Link>
+              <Link
+                href="/about"
+                className="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                About
+              </Link>
+              <Link
+                href="/service"
+                className="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                Service
+              </Link>
+              <Link
+                href="/contact"
+                className="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                Contact
+              </Link>
+            </div>
+          </div>
+        )}
       </div>
-    </div>
+    </nav>
   )
 }
-
-export default Service
