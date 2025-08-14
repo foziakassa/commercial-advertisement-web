@@ -22,22 +22,22 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <div className="-ml-5 flex-shrink-0 flex flex-row">
-           <Link href="/" className="flex items-center">
-              <Image
-              src="/image/logo2.png"
-              alt="Logo"
-              width={70}
-              height={70}
-              />
-            </Link>
-            <p
-            className="text-xl font-bold text-blue-900 justify-center flex items-center px-2
-          "
-            >
-              Commercial Addvertisment</p>
-          </div>
-
+          <div className="flex flex-row items-center -ml-5">
+  <Link href="/" className="flex-shrink-0 flex items-center">
+    <Image
+      src="/image/logo2.png"
+      alt="Logo"
+      width={70}
+      height={70}
+      className="h-auto"
+    />
+  </Link>
+  <p
+    className="text-xl font-bold text-blue-900 flex items-center px-2 md:text-2xl"
+  >
+    Commercial Advertisement
+  </p>
+</div>
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="flex items-baseline space-x-8">
