@@ -46,7 +46,7 @@ export default function Testinomial() {
 
   return (
     <div className="">
-      <h1 className="text-blue-700 text-center text-4xl font-bold p-2 bg-opacity-40 rounded-sm">
+      <h1 className="text-blue-900 text-center text-5xl md:text-6xl font-bold mb-6">
         {/* {t("client")} */}
         Client sayings
       </h1>

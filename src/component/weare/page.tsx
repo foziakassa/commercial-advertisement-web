@@ -16,7 +16,7 @@ export default function WeAre() {
       px-6 py-2"
     >
       <h1
-        className="text-teal-700 text-center text-5xl 
+        className="text-blue-900 text-center text-5xl 
          font-bold 
         p-2 bg-opacity-40 rounded-sm"
         style={{ fontFamily: 'Open Sans' }}
@@ -26,7 +26,7 @@ export default function WeAre() {
       </h1>
 
       <h1
-        className="text-teal-600 text-center xl:text-4xl 
+        className="text-blue-600 text-center xl:text-4xl 
         lg:text-3xl md:text-2xl sm:text-2xl xs:text-2xl font-bold 
         p-2 bg-opacity-40 rounded-sm"
         style={{ fontFamily: 'Open Sans' }}

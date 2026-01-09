@@ -2,7 +2,7 @@ import React from "react";
 
 const ContactSection: React.FC = () => {
   return (
-    <section className="mb-32">
+    <section className="mb-32" id="contact">
       <div
         id="map"
         className="relative h-[300px] overflow-hidden bg-cover bg-[50%] bg-no-repeat"
@@ -85,7 +85,7 @@ const ContactSection: React.FC = () => {
 
                 <button
                   type="button"
-                  className="mb-6 w-full rounded bg-blue-500 text-white px-6 pt-2.5 pb-2 text-xs 
+                  className="mb-6 w-full rounded bg-blue-900 text-white px-6 pt-2.5 pb-2 text-xs 
                   font-medium uppercase leading-normal lg:mb-0"
                 >
                   Send
@@ -195,7 +195,7 @@ const ContactSection: React.FC = () => {
                 <div className="w-full shrink-0 grow-0 basis-auto md:w-6/12 md:px-3 lg:w-full lg:px-6 xl:mb-12 xl:w-6/12">
                   <div className="flex items-start">
                     <div className="shrink-0">
-                      <div className="inline-block rounded-md bg-sky-200 p-4 text-primary">
+                      <div className="inline-block rounded-md bg-blue-200 p-4 text-primary">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"

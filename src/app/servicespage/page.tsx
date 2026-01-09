@@ -38,7 +38,7 @@ const mockData: ServiceData[] = [
   },
 ]
 
-const Service = () => {
+const ServicePage = () => {
   const [perPage, setPerPage] = useState(5)
   const [currentPage, setCurrentPage] = useState(1)
   const [selectedService, setSelectedService] = useState<ServiceData | null>(mockData[0])
@@ -71,7 +71,19 @@ const Service = () => {
   const paginatedServices = mockData.slice((currentPage - 1) * perPage, currentPage * perPage)
 
   return (
-    <div className=" bg-white">
+    <>
+    <div className="bg-gradient-to-br from-gray-900 via-blue-900 to-blue-700 overflow-hidden text-white py-24 px-6">
+        <div className="max-w-screen-xl mx-auto text-center">
+          <h1 className="text-5xl sm:text-6xl font-bold mb-6 text-balance">About Our Company</h1>
+          <p className="text-lg sm:text-xl text-blue-100 mb-8 max-w-2xl mx-auto text-pretty">
+            We&apos;ve been crafting innovative solutions that transform businesses and drive real results since day one.
+          </p>
+          <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
+            Get In Touch
+          </button>
+        </div>
+      </div>
+    <div className="min-h-screen bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
           {/* Services List Section */}
@@ -143,7 +155,8 @@ const Service = () => {
         </div>
       </div>
     </div>
+    </>
   )
 }
 
-export default Service
+export default ServicePage

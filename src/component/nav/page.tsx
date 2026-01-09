@@ -49,7 +49,8 @@ export default function Navbar() {
               About
             </Link>
             <Link
-              href="/service"
+              href="
+              /servicespage"
               className="text-gray-700 hover:text-blue-600 px-3 py-2 text-lg font-medium transition-colors whitespace-nowrap"
             >
               Service

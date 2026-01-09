@@ -18,8 +18,8 @@ const Card = ({ serviceData, onClick, isSelected }: ServicesProps) => {
         w-full p-4 rounded-lg shadow-md cursor-pointer transition-all duration-200
         ${
           isSelected
-            ? "bg-blue-700 text-white transform scale-105"
-            : "bg-white text-gray-900 hover:bg-blue-700 hover:text-white hover:transform hover:scale-105"
+            ? "bg-blue-900 text-white transform scale-105"
+            : "bg-white text-gray-900 hover:bg-blue-900 hover:text-white hover:transform hover:scale-105"
         }
       `}
       onClick={onClick}

@@ -34,10 +34,10 @@ export default function FAQ() {
       <div className="relative w-full bg-white px-6 pt-10 pb-8 mb-10 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-2xl sm:rounded-lg sm:px-10">
         <div className="mx-auto px-5">
           <div className="flex flex-col items-center">
-            <h2 className="mt-5 text-center text-xl text-teal-600 font-bold tracking-tight md:text-5xl">
+            {/* <h2 className="mt-5 text-center text-xl text-teal-600 font-bold tracking-tight md:text-5xl"> */}
               {/* {t("faq")} */}
-              faq
-            </h2>
+              {/* faq */}
+            {/* </h2> */}
             <p className="mt-3 text-lg text-neutral-500 md:text-xl">
               Frequently asked questions
             </p>

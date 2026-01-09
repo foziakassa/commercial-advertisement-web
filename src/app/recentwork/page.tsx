@@ -3,13 +3,13 @@
 import { useState, useEffect } from "react"
 import Card from "@/component/sevice/page"
 
-interface ServiceData {
+interface WorkData {
   name: string
   description: string
   coverPage: string
 }
 
-const mockData: ServiceData[] = [
+const mockData: WorkData[] = [
   {
     name: "Billboards",
     description: "Large-format outdoor advertising to capture attention.",
@@ -38,10 +38,10 @@ const mockData: ServiceData[] = [
   },
 ]
 
-const Service = () => {
+const Work = () => {
   const [perPage, setPerPage] = useState(5)
   const [currentPage, setCurrentPage] = useState(1)
-  const [selectedService, setSelectedService] = useState<ServiceData | null>(mockData[0])
+  const [selectedService, setSelectedService] = useState<WorkData | null>(mockData[0])
 
   useEffect(() => {
     const handleResize = () => {
@@ -64,25 +64,25 @@ const Service = () => {
 
   const totalPage = Math.ceil(mockData.length / perPage)
 
-  const handleServiceClick = (service: ServiceData) => {
+  const handleServiceClick = (service: WorkData) => {
     setSelectedService(service)
   }
 
   const paginatedServices = mockData.slice((currentPage - 1) * perPage, currentPage * perPage)
 
   return (
-    <div className=" bg-white">
+    <div className=" min-h-screen bg-white" id={"work-page"}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
           {/* Services List Section */}
           <div className="w-full lg:w-1/2">
             <div className="bg-blue-50 rounded-lg shadow-lg p-4 sm:p-6 lg:p-8">
               <div className="text-center mb-6">
-                <h1 className="text-2xl sm:text-3xl lg:text-6xl font-bold text-blue-900">Our Services</h1>
+                <h1 className="text-2xl sm:text-3xl lg:text-6xl font-bold text-blue-900">recent Projects</h1>
               </div>
 
               <div className="space-y-4">
-                {paginatedServices.map((item: ServiceData, index: number) => (
+                {paginatedServices.map((item: WorkData, index: number) => (
                   <div key={index} className="w-full">
                     <Card
                       serviceData={item}
@@ -146,4 +146,4 @@ const Service = () => {
   )
 }
 
-export default Service
+export default Work

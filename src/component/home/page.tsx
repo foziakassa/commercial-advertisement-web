@@ -1,123 +1,60 @@
 "use client";
-import React, { useState } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay, Keyboard } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/autoplay';
+import React from 'react';
 
 const HomePage: React.FC = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  const apiData = [
-    {
-      cover: "/image/business.jpg",
-      title: 'Welcome to Our Restaurant',
-      description: 'Enjoy a delightful dining experience with our exquisite menu.',
-    },
-    {
-      cover: "/image/calander.jpeg",
-      title: 'Fresh Ingredients Daily',
-      description: 'We source fresh ingredients to ensure top quality in every dish.',
-    },
-    {
-      cover: "/image/grapicdesign.jpeg",
-      title: 'Special Offers Every Week',
-      description: 'Check out our weekly specials for great deals!',
-    },
-    {
-      cover: "/image/printing.jpg",
-      title: 'Book Your Table Online',
-      description: 'Reserve your table easily through our online booking system.',
-    },
-  ];
-
-  const handleGetStartedClick = () => {
-    const newWindow = window.open('about:blank', '_blank');
-    if (newWindow) {
-      newWindow.document.write(`
-        <h1>Welcome!</h1>
-        <p>Get ready to explore our amazing menu.</p>
-      `);
-    } else {
-      console.error("Failed to open new window");
-    }
-  };
-
+  
+  
   return (
-    <div>
-      {/* <header className="fixed top-0 left-0 w-full bg-opacity-70 bg-blue-800 text-white p-4 z-10">
-        <h1 className="text-2xl font-bold">{apiData[activeIndex].title}</h1>
-        <p>{apiData[activeIndex].description}</p>
-      </header> */}
-
-      <Swiper
-        modules={[Navigation, Pagination, Autoplay, Keyboard]} 
-        spaceBetween={20}
-        slidesPerView={1}
-        speed={3000}
-        autoplay={{
-          delay: 2000,
-          disableOnInteraction: false,
-        }}
-        loop={true}
-        keyboard={{ enabled: true }}
-        navigation
-        pagination={{ clickable: true }}
-        onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)} // Update active index on slide change
-      >
-        {apiData.map((slide, index) => (
-          <SwiperSlide key={index}>
-            <div
-              className="top-0 left-0 w-full relative bg-cover bg-center h-[400px] overflowX-hidden"
-              style={{
-                backgroundImage: `url('${slide.cover}')`,
-                width: '100vw',
-                overflowY: 'hidden',
-              }}
-            >
-              <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-blue-800"></div>
-              <div className="relative h-full">
-                <section className="max-w-5xl pt-52 pb-24 mx-auto text-white body-font -mt-20">
-                  <div className="flex flex-col items-center justify-center h-full px-4">
-                    <h1
-                      className="text-3xl md:text-5xl text-white font-bold text-center justify-center mb-6 animate__animated"
-                      style={{
-                        textShadow: '0px 2px 4px rgba(0, 0, 0, 0.2)',
-                        animation: 'float 2s infinite',
-                      }}
-                    >
-                      {slide.title}
-                    </h1>
-                    <h2
-                      className="text-xl md:text-2xl text-white font-bold text-center mb-12 animate__animated"
-                      style={{
-                        textShadow: '0px 2px 4px rgba(0, 0, 0, 0.2)',
-                        animation: 'bounce 2s infinite',
-                      }}
-                    >
-                      {slide.description}
-                    </h2>
-                    <div className="flex justify-center w-full">
-                      <button
-                        className="bg-gradient-to-r from-blue-800 to-blue-800 hover:from-blue-300 hover:to-blue-900 text-white font-bold py-2 px-4 rounded-lg shadow-md animate__animated"
-                        style={{
-                          animation: 'pulse 2s infinite',
-                          fontSize: 18,
-                        }}
-                        onClick={handleGetStartedClick}
-                      >
-                        contact us 
-                      </button>
-                    </div>
-                  </div>
-                </section>
-              </div>
+    <div className="max-h-screen -mt-20 bg-white">
+      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-blue-900 to-blue-700 overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/image/grid-pattern.svg')] opacity-10"></div>
+        <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="relative z-8 container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center text-white">
+            <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 mb-8 border border-white/20">
+              <span className="w-2 h-2 bg-blue-400 rounded-full animate-pulse mr-3"></span>
+              <span className="text-sm font-medium">Waiting for You</span>
             </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+            
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+              Commercial
+              <span className="block bg-gradient-to-r from-blue-400 to-blue-200 bg-clip-text text-transparent">
+                Advertisement
+              </span>
+            </h1>
+            <p className="text-lg md:text-xl text-gray-200 mb-8 max-w-3xl mx-auto leading-relaxed">
+              Transforming brands through innovative advertising strategies that drive growth, 
+              engage audiences, and deliver exceptional results in today&apos;s competitive market.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16  sm:flex">
+              <a href='#contact' className="bg-white text-gray-900 hover:bg-gray-100 font-bold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-xl text-base">
+                Get In Touch
+              </a>
+              <a href='#our-work-page' className="border-2 border-white text-white hover:bg-white/10 font-bold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 text-base">
+                View Our Work
+              
+              </a>
+            </div>
+          </div>
+        </div>
+        <div className="absolute bottom-32 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
+            <div className="w-1 h-3 bg-white rounded-full mt-2"></div>
+          </div>
+        </div>
+        <div className="absolute bottom-0 left-0 w-full bg-white rounded-t-[100px] pt-16 pb-8">
+          <div className="container mx-auto px-4">
+            <p className="mb-6 mx-auto max-w-4xl text-gray-700 text-center text-lg md:text-xl leading-relaxed" style={{ fontFamily: 'Open Sans', lineHeight: 1.5 }}>
+              Commercial Advertising and Printing is a premier provider of comprehensive advertising and printing solutions. 
+              Our company specializes in a wide array of services designed to enhance brand visibility and impact through 
+              innovative design and quality production. 
+            </p>
+            
+            
+          </div>
+        </div>
+      </section>
     </div>
   );
 };

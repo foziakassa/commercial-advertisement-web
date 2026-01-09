@@ -12,6 +12,8 @@ import ContactSection from "@/component/contact/page";
 import Testinomial from "@/component/testimonial/page";
 import Modals from "@/component/modals/page";
 import Contact from "./contact/page";
+import OurWorkPage from "@/component/ourwork/page";
+import Work from "./recentwork/page";
 export default function Home() {
   const [visibles, setVisibles] = useState(false);
   function showModalss() {
@@ -29,9 +31,12 @@ export default function Home() {
       <HomePage/>
       {/* <WeAre/> */}
 
-      <AboutPage/>
+      {/* <AboutPage/> */}
       {/* <ServiceSample/> */}
       <Service/>
+      {/* <Work/> */}
+      <OurWorkPage />
+
       <Testinomial/>
 
       {/* <ContactSection/> */}
