@@ -83,6 +83,7 @@ export default function OurWorkPage() {
     },
   ]
   //
+  //
 
   return (
     <div className="min-h-screen bg-white" id="our-work-page">
@@ -96,6 +97,7 @@ export default function OurWorkPage() {
           </p>
         </div>
       </section>
+      
 
       {/* Work Grid */}
       <section className="px-4 py-20 sm:px-6 lg:px-8">
