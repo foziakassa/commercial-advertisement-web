@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Card from "@/component/sevice/page"
+import { useRouter } from "next/navigation"
 
 interface ServiceData {
   name: string
@@ -67,7 +68,7 @@ const ServicePage = () => {
   const handleServiceClick = (service: ServiceData) => {
     setSelectedService(service)
   }
-
+const router = useRouter()
   const paginatedServices = mockData.slice((currentPage - 1) * perPage, currentPage * perPage)
 
   return (
@@ -78,7 +79,8 @@ const ServicePage = () => {
           <p className="text-lg sm:text-xl text-blue-100 mb-8 max-w-2xl mx-auto text-pretty">
             We&apos;ve been crafting innovative solutions that transform businesses and drive real results since day one.
           </p>
-          <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
+          <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
+          onClick={() => {router.push("/contact")}}>
             Get In Touch
           </button>
         </div>

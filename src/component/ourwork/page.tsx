@@ -88,7 +88,7 @@ export default function OurWorkPage() {
   return (
     <div className="min-h-screen bg-white" id="our-work-page">
       {/* Hero Section */}
-      <section className="border-b border-border px-4 py-24 sm:px-6 lg:px-8">
+      <section className="border-b border-border px-4 py-16  sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
          
           <h1 className="mb-4 text-5xl font-bold tracking-tight text-blue-900 sm:text-6xl">Recent Work</h1>
@@ -100,7 +100,7 @@ export default function OurWorkPage() {
       
 
       {/* Work Grid */}
-      <section className="px-4 py-20 sm:px-6 lg:px-8">
+      <section className="px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {workData.map((item) => (

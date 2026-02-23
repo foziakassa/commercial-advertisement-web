@@ -21,7 +21,7 @@ export default function Faqcard(props: FaqProps) {
               <svg
                 fill="none"
                 height="24"
-                shape-rendering="geometricPrecision"
+                shapeRendering="geometricPrecision"
                 stroke="currentColor"
                 stroke-linecap="round"
                 stroke-linejoin="round"
@@ -35,15 +35,7 @@ export default function Faqcard(props: FaqProps) {
           </summary>
           <p className="group-open:animate-fadeIn mt-3 text-neutral-600">
           {FaqData.answer}
-          <button 
-          onClick={()=>
-            router.push('/All')
-
-          }
-          className="pl-2 text-blue-600/75">
-            {/* {t('seeMore')} */}
-            see more
-            </button>
+          
 
             
           </p>
